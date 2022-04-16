@@ -28,6 +28,8 @@
         'views/first_module_first_model_view.xml',
         'views/fist_module_menus_view.xml',
 
+        'wizard/first_module_wizzard_task_vies.xml',
+
         'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode

@@ -2,4 +2,5 @@
 <odoo>
     <menuitem id="first_module_menu_root" name="First module"/>
     <menuitem id="first_model_menu_action" name="First model" parent="first_module_menu_root" action="first_module_first_model_action"/>
+    <menuitem id="first_model_wizard_task" name="Wizard task" parent="first_module_menu_root" action="action_first_module_wizard_task"/>
 </odoo>
