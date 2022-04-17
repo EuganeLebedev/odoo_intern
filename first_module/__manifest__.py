@@ -26,9 +26,9 @@
         'views/views.xml',
         'views/templates.xml',
         'views/first_module_first_model_view.xml',
+        'wizard/first_module_wizard_task_vies.xml',
         'views/fist_module_menus_view.xml',
 
-        'wizard/first_module_wizzard_task_vies.xml',
 
         'security/ir.model.access.csv',
     ],
