@@ -49,3 +49,12 @@ class PolishTest(models.Model):
             pattern = f'{{{field_label}}}'
             self.text = re.sub(pattern, '', self.text).strip()
 
+    @api.onchange('select1')
+    def _on_change_select1(self):
+        if self.select2 and self.select1:
+            self.select2 = False
+
+    @api.onchange('select2')
+    def _on_change_select2(self):
+        if self.select1 and self.select2:
+            self.select1 = False
