@@ -32,8 +32,8 @@ class PolishTest(models.Model):
 
         if self.check1:
             if len(self.text) > 0:
-                self.text = self.text + ' '
-            self.text = (self.text + f'[{field_label}]').strip()
+                self.text = ' ' + self.text
+            self.text = (f'[{field_label}]' + self.text).strip()
         else:
             pattern = f'\[{field_label}\]'
             self.text = re.sub(pattern, '', self.text).strip()
