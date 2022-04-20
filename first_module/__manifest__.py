@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale'],
+    'depends': ['base', 'sale', 'stock'],
 
     # always loaded
     'data': [
@@ -28,6 +28,7 @@
         'views/first_module_first_model_view.xml',
         'views/first_module_polish_test_view.xml',
         'views/res_partner_view.xml',
+        'views/sale_order_line_view.xml',
         'wizard/first_module_wizard_task_vies.xml',
         'views/fist_module_menus_view.xml',
 
