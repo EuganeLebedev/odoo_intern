@@ -21,6 +21,7 @@
             </xpath>
             <xpath expr="//form/sheet/group/group/field[@name='mobile']" position="after">
                 <field name="is_primary"/>
+                <field name="is_primary_date" invisible="1"/>
             </xpath>
         </field>
     </record>
