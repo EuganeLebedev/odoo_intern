@@ -30,9 +30,10 @@
         'views/res_partner_view.xml',
         'views/sale_order_line_view.xml',
         'views/stock_picking_view.xml',
-        'wizard/first_module_wizard_task_vies.xml',
-        'views/fist_module_menus_view.xml',
 
+        'wizard/first_module_wizard_task_vies.xml',
+
+        'views/fist_module_menus_view.xml',
 
         'security/ir.model.access.csv',
     ],
