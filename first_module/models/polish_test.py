@@ -23,8 +23,8 @@ class PolishTest(models.Model):
 
     @api.onchange('check_all')
     def _on_change_check_all(self):
-        self.check1 = self.check_all
-        self.check2 = self.check_all
+            self.check1 = self.check_all
+            self.check2 = self.check_all
 
     @api.onchange('check1')
     def _on_change_check1(self):
