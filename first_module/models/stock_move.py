@@ -6,6 +6,9 @@ class StockMoveInherit(models.Model):
     express_delivery = fields.Boolean()
 
     def _search_picking_for_assignation(self):
+        """
+        Метод переопределен для добавления групировки по атрибуту express_delivery
+        """
         self.ensure_one()
         picking = self.env['stock.picking'].search([
             ('group_id', '=', self.group_id.id),
@@ -21,10 +24,11 @@ class StockMoveInherit(models.Model):
         return picking
 
     def _assign_picking(self):
-        """ Try to assign the moves to an existing picking that has not been
-        reserved yet and has the same procurement group, locations and picking
-        type (moves should already have them identical). Otherwise, create a new
-        picking to assign them to. """
+        """
+         Метод переопределен для групировки moves в том числе и по атрибуту express_delivery строк отгрузки
+         Также при создании отгрузки, в строки которой входят позиции с атрибутом express_delivery, сама огрузка также
+         получает атрибут express_delivery = True
+         """
         Picking = self.env['stock.picking']
         grouped_moves = groupby(sorted(self, key=lambda m: [f.id for f in m._key_assign_picking()]),
                                 key=lambda m: [m._key_assign_picking(), m.express_delivery])
