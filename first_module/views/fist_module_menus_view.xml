@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="first_module_menu_root" name="First module"/>
+    <menuitem id="first_model_menu_action" name="First model" parent="first_module_menu_root" action="first_module_first_model_action"/>
+    <menuitem id="first_model_wizard_task" name="Wizard task" parent="first_module_menu_root" action="action_first_module_wizard_task"/>
+    <menuitem id="first_model_polish_test" name="Polish test" parent="first_module_menu_root" action="first_module_polish_test_action"/>
+</odoo>
