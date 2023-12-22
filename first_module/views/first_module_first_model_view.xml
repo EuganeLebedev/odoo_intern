@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="first_module_first_model_action" model="ir.actions.act_window">
+        <field name="name">First model</field>
+        <field name="res_model">first_module.first_model</field>
+        <field name="view_mode">tree,form,kanban,graph</field>
+    </record>
+
+    <record id="first_module_first_model_view_tree" model="ir.ui.view">
+        <field name="name">first_module.first_model.tree</field>
+        <field name="model">first_module.first_model</field>
+        <field name="arch" type="xml">
+            <tree string="First module" decoration-danger="active == False">
+                <field name="active"/>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="record_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="first_module_first_model_view_form" model="ir.ui.view">
+        <field name="name">first_module.first_model.form</field>
+        <field name="model">first_module.first_model</field>
+        <field name="arch" type="xml">
+            <form string="First Module">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="id"/>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                            <field name="record_date"/>
+                        </group>
+                    </group>
+                    <field name="description"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="first_module_first_model_view_search" model="ir.ui.view">
+        <field name="name">first_module.first_model.search</field>
+        <field name="model">first_module.first_model</field>
+        <field name="arch" type="xml">
+            <search string="First module">
+                <field name="name"/>
+                <field name="record_date"/>
+                <filter string="All records" name="all_records" domain="['|',('active', '=', True), ('active', '=', False)]"/>
+            </search>
+
+        </field>
+    </record>
+
+    <record id="first_module_first_model_view_kanban" model="ir.ui.view">
+        <field name="name">first_module.first_model.kanban</field>
+        <field name="model">first_module.first_model</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="active"/>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="record_date"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click kanban">
+                            <div class="oe_kanban_details">
+                                <strong class="oe_kanban_record_title">
+                                    Name: <field name="name"/>
+                                </strong>
+                                <ul>
+                                    <li>Record date: <field name="record_date"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+
+    </record>
+</odoo>
